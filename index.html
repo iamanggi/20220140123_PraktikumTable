@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PDW 5 Table</title>
+    <link rel="stylesheet" type="text/css" href="style/style.css">
+    <script src="https://kit.fontawesome.com/e4dc3a114d.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <main class="table" id="customers_table">
+        <section class="table__header">
+            <h1><span>Pengaduan </span>Masyarakat</h1>
+            <div>
+                <button class="add_new" onclick="window.open('Input.html', '_blank')">Add Keluhan</button>
+            </div>            
+        </section>
+        <section class="table__body">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="no-click"> No </th>
+                        <th class="no-click"> Pelapor </th>
+                        <th class="no-click"> Gambar </th>
+                        <th class="no-click"> Deskripsi </th>
+                        <th data-index="4"> Tanggal pengaduan <span class="icon-arrow" onclick="sortColumn(4)">&UpArrow;</span></th>
+                        <th data-index="5"> Lokasi laporan <span class="icon-arrow" onclick="sortColumn(5)">&UpArrow;</span></th>
+                        <th class="no-click"> Aksi </th>
+                    </tr>
+                </thead>
+                            
+                <tbody>
+                    <tr>
+                        <td> 1 </td>
+                        <td>Sulastri</td>
+                        <td><img src="assets/jalan rusak.png" alt=""> </td>
+                        <td> Jalanan rusak parah <br>banyak lubang besar</td>
+                        <td> 21 Feb 2024</td>
+                        <td> Dusun 3 </td>
+                        <td>
+                            <button class="delete-button"><i class="fa-solid fa-trash" onclick="sweetAlert()" style="color: #ffffff;"></i></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> 2 </td>
+                        <td>Samsul Bahri</td>
+                        <td> <img src="assets/Sampah.png" alt=""></td>
+                        <td> Banyak sampah yang <br>menumpuk di area taman </td>
+                        <td> 01 Jan 2024</td>
+                        <td> Dusun 2</td>
+                        <td>
+                            <button class="delete-button"><i class="fa-solid fa-trash" onclick="sweetAlert()" style="color: #ffffff;"></i></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> 3</td>
+                        <td> Budi Setiawan</td>
+                        <td> <img src="assets/Jalan Gelap.png" alt=""></td>
+                        <td> Penerangan jalan sangat <br> minim</td>
+                        <td> 03 Apr 2024</td>
+                        <td> Jln Nyimas sesangkan No.3</td>
+                        <td>
+                            <button class="delete-button"><i class="fa-solid fa-trash" onclick="sweetAlert()" style="color: #ffffff;"></i></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> 4</td>
+                        <td> Adi Nugroho </td>
+                        <td> <img src="assets/olahraga.png" alt=""></td>
+                        <td> Kurangnya sarana <br>olahraga di taman </td>
+                        <td> 26 Feb 2023</td>
+                        <td> Dusun 1</td>
+                        <td>
+                            <button class="delete-button"><i class="fa-solid fa-trash" onclick="sweetAlert()" style="color: #ffffff;"></i></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> 5</td>
+                        <td>Hadi Prasetyo </td>
+                        <td> <img src="assets/Kesehatan.png" alt=""></td>
+                        <td>Pelayanan kesehatan <br>yang kurang memadai</td>
+                        <td> 24 Jan 2024</td>
+                        <td> Desa Cempaka</td>
+                        <td>
+                            <button class="delete-button"><i class="fa-solid fa-trash" onclick="sweetAlert()" style="color: #ffffff;"></i></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> 6</td>
+                        <td> Rini Susanti</td>
+                        <td> <img src="assets/air bersih.png" alt=""> </td>
+                        <td> Kurangnya fasilitas <br>air bersih</td>
+                        <td> 05 May 2023</td>
+                        <td> Dusun 4 </td>
+                        <td>
+                            <button class="delete-button"><i class="fa-solid fa-trash" onclick="sweetAlert()" style="color: #ffffff;"></i></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> 7</td>
+                        <td>Maya Sari </td>
+                        <td> <img src="assets/Kendaraan.png" alt=""> </td>
+                        <td> Kurangnya akses <br>kendaraan umum</td>
+                        <td> 22 Dec 2023</td>
+                        <td>Desa Cempaka </td>
+                        <td>
+                            <button class="delete-button"><i class="fa-solid fa-trash" onclick="sweetAlert()" style="color: #ffffff;"></i></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> 8</td>
+                        <td>Fajar Maulana </td>
+                        <td> <img src="assets/pasar.png" alt=""> </td>
+                        <td> Harga sembako <br>sangat tinggi</td>
+                        <td> 10 Jan 2024</td>
+                        <td>Desa Cempaka </td>
+                        <td>
+                            <button class="delete-button"><i class="fa-solid fa-trash" onclick="sweetAlert()" style="color: #ffffff;"></i></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> 9</td>
+                        <td> Miftahul Huda </td>
+                        <td> <img src="assets/Masjid.png" alt=""> </td>
+                        <td> Rumah ibadah kurang terawat </td>
+                        <td> 01 July 2023</td>
+                        <td> Desa Cempaka</td>
+                        <td>
+                            <button class="delete-button"><i class="fa-solid fa-trash" onclick="sweetAlert()" style="color: #ffffff;"></i></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <script src="script/main.js"></script>
+    
+</body>
+
+</html>

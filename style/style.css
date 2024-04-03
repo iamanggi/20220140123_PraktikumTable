@@ -1,0 +1,231 @@
+* {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main.table {
+    width: 84vw;
+    height: 90vh;
+    background-color: #fff5;
+    backdrop-filter: blur(7px);
+    box-shadow: 0 .4rem .8rem #0005;
+    border-radius: .7rem;
+    overflow: hidden;
+}
+
+td button:nth-child(1){
+    border-radius: 5px;
+    width: 35px;
+    height: 35px;
+    background-color: red;
+    cursor: pointer;
+}
+
+.table__header {
+    width: 100%;
+    height: 10%;
+    background-color: #fff4;
+    padding: .8rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 50px;
+    margin-top: 20px;
+    font-size: 20px;
+}
+.table__header span{
+    font-family: 'Lucida Handwriting';
+    color:  #998d26;
+}
+
+
+.table__header button {
+    cursor: pointer;
+}
+
+.table__body {
+    width: 95%;
+    max-height: calc(89% - 1.6rem);
+    background-color: rgba(255, 255, 255, 0.733);
+    margin: .8rem auto;
+    border-radius: .6rem;
+    overflow: auto;
+    overflow: overlay;
+}
+
+
+.table__body::-webkit-scrollbar{
+    width: 0.5rem;
+    height: 0.5rem;
+}
+
+.table__body::-webkit-scrollbar-thumb{
+    border-radius: .5rem;
+    background-color: #0004;
+    visibility: hidden;
+}
+
+.table__body:hover::-webkit-scrollbar-thumb{ 
+    visibility: visible;
+}
+
+table {
+    width: 100%;
+}
+
+td img {
+    width: 100px;
+    height: 100px;
+    vertical-align: middle;
+}
+
+table, th, td {
+    border-collapse: collapse;
+    padding: 14px;
+    text-align: justify;
+}
+
+/* Tambahkan properti pointer-events pada th yang tidak bisa dipencet */
+thead th.no-click {
+    pointer-events: none;
+}
+
+/* Selebihnya tetap seperti sebelumnya */
+thead th {
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: #d7d7aafe;
+    cursor: pointer;
+    text-transform: capitalize;
+}
+
+
+thead th span.icon-arrow {
+    display: inline-block;
+    width: 1.3rem;
+    height: 1.3rem;
+    border-radius: 50%;
+    border: 1.4px solid transparent;
+    text-align: center;
+    font-size: 1rem;
+    margin-left: .5rem;
+    transition: .2s ease-in-out;
+}
+
+thead th:hover span.icon-arrow{
+    border: 1.4px solid #3862e0;
+}
+
+thead th:hover {
+    color: #3862e0;
+}
+
+thead th.active span.icon-arrow{
+    background-color: #3862e0;
+    color: #fff;
+}
+
+thead th.asc span.icon-arrow{
+    transform: rotate(180deg);
+}
+
+/* Style untuk form keluhan */
+.add_keluhan {
+    width: 450px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #e3e3e3;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style untuk grup input */
+.input-group {
+    margin-bottom: 15px;
+}
+
+/* Style untuk label */
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    margin-top: 15px;
+    font-family: 'Times New Roman';
+}
+
+/* Style untuk input */
+.input-group input[type="text"],
+.input-group input[type="date"],
+.input-group input[type="file"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* untuk memastikan padding dan border tidak menambah lebar input */
+}
+
+/* Style untuk tombol submit */
+.login-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #3862e0;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Hover effect untuk tombol submit */
+.login-btn:hover {
+    background-color: #1f3167;
+}
+
+/* Style untuk deskripsi */
+.input-Des label {
+    display: block;
+    margin-bottom: 5px;
+    font-family: 'Times New Roman';
+}
+
+.input-Des input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* untuk memastikan padding dan border tidak menambah lebar input */
+    height: 100px; /* tinggi input disesuaikan dengan kebutuhan */
+}
+
+/* Style tombol tambah keluhan */
+.add_new {
+    padding: 8px 15px; /* Atur padding tombol */
+    background-color: #3862e0; /* Warna latar belakang tombol */
+    color: white; /* Warna teks tombol */
+    border-radius: 5px; /* Atur sudut tombol */
+    cursor: pointer; /* Ganti kursor saat diarahkan ke tombol */
+    font-size: 14px; /* Ukuran font tombol */
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s; /* Transisi ketika tombol berubah */
+    font-weight: bold;
+    border: 2px solid #226287; /* Warna border */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Efek shadow */
+    margin: 5px 74px 0 0;
+
+}
+
+.add_new:hover {
+    background-color: transparent; /* Warna latar belakang saat tombol dihover */
+    border: 2px solid #3862e0; /* Tambahkan border putih pada tombol */
+    color: #000000; /* Warna teks menjadi putih saat dihover */
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3); /* Efek shadow hanya di bagian bawah kanan */
+}
