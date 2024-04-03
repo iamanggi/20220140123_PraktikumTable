@@ -1,213 +1,211 @@
+/* Setel margin dan padding ke nol untuk semua elemen */
 * {
     margin: 0;
     padding: 0;
-
-    box-sizing: border-box;
-    font-family: sans-serif;
+    box-sizing: border-box;  /* Gunakan box-sizing border-box untuk menghindari perhitungan yang tidak tepat dalam tata letak */
+    font-family: sans-serif;     /* Gunakan font sans-serif sebagai default */
 }
 
-
 body {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    min-height: 100vh;  /* Buat tinggi minimum dari tubuh setara dengan ketinggian viewport */
+    display: flex; /* Menampilkan elemen secara flex untuk penempatan horizontal dan vertikal */
+    justify-content: center; /* Penempatan horizontal ke tengah */
+    align-items: center; /* Penempatan vertikal ke tengah */
 }
 
 main.table {
+    /* Tentukan lebar dan tinggi elemen */
     width: 84vw;
     height: 90vh;
+    /* Tentukan warna latar belakang dengan efek blur */
     background-color: #fff5;
     backdrop-filter: blur(7px);
-    box-shadow: 0 .4rem .8rem #0005;
-    border-radius: .7rem;
-    overflow: hidden;
+    box-shadow: 0 .4rem .8rem #0005;     /* Tambahkan bayangan untuk efek tiga dimensi */
+    border-radius: .7rem;    /* Buat sudut pada elemen */
+    overflow: hidden; /* Atur overflow agar isi konten di dalam elemen tetap dalam batasannya */
 }
 
+
 td button:nth-child(1){
-    border-radius: 5px;
-    width: 35px;
+    border-radius: 5px;    /* Membuat kanan atas sudut yang lebih besar */
+    /* Tentukan lebar dan tinggi tombol */
+    width: 35px; 
     height: 35px;
-    background-color: red;
-    cursor: pointer;
+    background-color: red;    /* Warna latar belakang tombol merah */
+    cursor: pointer;    /* Ganti cursor menjadi tangkan saat tombol diklik */
 }
 
 .table__header {
-    width: 100%;
-    height: 10%;
-    background-color: #fff4;
-    padding: .8rem 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-left: 50px;
-    margin-top: 20px;
-    font-size: 20px;
-}
-.table__header span{
-    font-family: 'Lucida Handwriting';
-    color:  #998d26;
+    width: 100%;    /* Memperbesar header untuk memenuhi luas kolom */
+    height: 10%;    /* Tentukan tinggi header */
+    background-color: #fff4;    /* Tentukan warna latar belakang */
+    padding: .8rem 1rem;    /* Tentukan padding */
+    display: flex;    /* Menampilkan elemen secara flex */
+    justify-content: space-between;    /* Menyeimbangkan ruang di sekitar elemen */
+    align-items: center;    /* Menyusun elemen secara vertikal ke tengah */
+    margin-left: 50px;    /* Tentukan jarak kiri */
+    margin-top: 20px;    /* Tentukan jarak atas */
+    font-size: 20px;    /* Tentukan ukuran font */
 }
 
+.table__header span {
+    font-family: 'Lucida Handwriting';    /* Tentukan jenis font */
+    color:  #998d26;    /* Tentukan warna teks */
+}
 
 .table__header button {
-    cursor: pointer;
+    cursor: pointer; /* Menjadikan kursor berbentuk tangan saat diarahkan ke tombol */
 }
 
 .table__body {
-    width: 95%;
-    max-height: calc(89% - 1.6rem);
-    background-color: rgba(255, 255, 255, 0.733);
-    margin: .8rem auto;
-    border-radius: .6rem;
-    overflow: auto;
-    overflow: overlay;
+    width: 95%; /* Menetapkan lebar maksimum dari bagian isi tabel */
+    max-height: calc(89% - 1.6rem); /* Menetapkan tinggi maksimum dari bagian isi tabel */
+    background-color: rgba(255, 255, 255, 0.733); /* Menetapkan warna latar belakang dengan transparansi */
+    margin: .8rem auto; /* Menetapkan margin atas dan bawah serta secara otomatis menengahkan elemen */
+    border-radius: .6rem; /* Menetapkan sudut membulatkan */
+    overflow: auto; /* Mengaktifkan overflow ketika konten melebihi ukuran */
+    overflow: overlay; /* Pengaturan untuk overlay scrollbar */
 }
 
-
-.table__body::-webkit-scrollbar{
-    width: 0.5rem;
-    height: 0.5rem;
+.table__body::-webkit-scrollbar {
+    width: 0.5rem; /* Menetapkan lebar scrollbar */
+    height: 0.5rem; /* Menetapkan tinggi scrollbar */
 }
 
-.table__body::-webkit-scrollbar-thumb{
-    border-radius: .5rem;
-    background-color: #0004;
-    visibility: hidden;
+.table__body::-webkit-scrollbar-thumb {
+    border-radius: .5rem; /* Menetapkan sudut membulatkan untuk thumb scrollbar */
+    background-color: #0004; /* Menetapkan warna untuk thumb scrollbar */
+    visibility: hidden; /* Menyembunyikan thumb scrollbar secara default */
 }
 
-.table__body:hover::-webkit-scrollbar-thumb{ 
-    visibility: visible;
+.table__body:hover::-webkit-scrollbar-thumb { 
+    visibility: visible; /* Menampilkan thumb scrollbar saat pointer di atas bagian isi tabel */
 }
 
 table {
-    width: 100%;
+    width: 100%; /* Menetapkan lebar tabel menjadi 100% */
 }
 
 td img {
-    width: 100px;
-    height: 100px;
-    vertical-align: middle;
+    width: 100px; /* Menetapkan lebar gambar */
+    height: 100px; /* Menetapkan tinggi gambar */
+    vertical-align: middle; /* Menengahkan gambar secara vertikal */
 }
 
 table, th, td {
-    border-collapse: collapse;
-    padding: 14px;
-    text-align: justify;
+    border-collapse: collapse; /* Menggabungkan batasan sel menjadi satu */
+    padding: 14px; /* Memberikan jarak antara isi sel dengan batasan sel */
+    text-align: justify; /* Menyusun teks secara rata kiri dan kanan di dalam sel */
 }
 
-/* Tambahkan properti pointer-events pada th yang tidak bisa dipencet */
+/* Gaya untuk header kolom yang tidak dapat diklik */
 thead th.no-click {
-    pointer-events: none;
+    pointer-events: none; /* Menonaktifkan peristiwa mouse pada header kolom */
 }
 
-/* Selebihnya tetap seperti sebelumnya */
 thead th {
-    position: sticky;
-    top: 0;
-    left: 0;
-    background-color: #d7d7aafe;
-    cursor: pointer;
-    text-transform: capitalize;
+    position: sticky; /* Membuat header tetap pada bagian atas ketika di-scroll */
+    top: 0; /* Menetapkan posisi header di bagian atas */
+    left: 0; /* Menetapkan posisi header di bagian kiri */
+    background-color: #d7d7aafe; /* Tentukan warna latar belakang */
+    cursor: pointer; /* Ubah kursor menjadi tangan saat diarahkan ke header */
+    text-transform: capitalize; /* Mengubah teks menjadi huruf kapital pada header */
 }
-
 
 thead th span.icon-arrow {
-    display: inline-block;
-    width: 1.3rem;
-    height: 1.3rem;
-    border-radius: 50%;
-    border: 1.4px solid transparent;
-    text-align: center;
-    font-size: 1rem;
-    margin-left: .5rem;
-    transition: .2s ease-in-out;
+    display: inline-block; /* Menjadikan ikon panah sebagai elemen inline */
+    width: 1.3rem; /* Tentukan lebar ikon */
+    height: 1.3rem; /* Tentukan tinggi ikon */
+    border-radius: 50%; /* Membuat sudut ikon menjadi lingkaran */
+    border: 1.4px solid transparent; /* Tentukan garis batas dengan transparansi */
+    text-align: center; /* Menyusun teks di tengah ikon */
+    font-size: 1rem; /* Tentukan ukuran font */
+    margin-left: .5rem; /* Tentukan jarak kiri dari teks header */
+    transition: .2s ease-in-out; /* Efek transisi saat perubahan */
 }
 
-thead th:hover span.icon-arrow{
-    border: 1.4px solid #3862e0;
+thead th:hover span.icon-arrow {
+    border: 1.4px solid #3862e0; /* Ubah warna batas ikon saat dihover */
 }
 
 thead th:hover {
-    color: #3862e0;
+    color: #3862e0; /* Ubah warna teks saat dihover */
 }
 
-thead th.active span.icon-arrow{
-    background-color: #3862e0;
-    color: #fff;
+thead th.active span.icon-arrow {
+    background-color: #3862e0; /* Tentukan warna latar belakang ikon saat aktif */
+    color: #fff; /* Tentukan warna teks ikon saat aktif */
 }
 
-thead th.asc span.icon-arrow{
-    transform: rotate(180deg);
+thead th.asc span.icon-arrow {
+    transform: rotate(180deg); /* Memutar ikon panah menjadi ke atas saat diurutkan secara ascending */
 }
-
-/* Style untuk form keluhan */
 .add_keluhan {
-    width: 450px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #e3e3e3;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 450px; /* Tentukan lebar formulir */
+    margin: 0 auto; /* Menengahkan formulir secara horizontal */
+    padding: 20px; /* Tentukan padding formulir */
+    background-color: #e3e3e3; /* Tentukan warna latar belakang formulir */
+    border-radius: 5px; /* Tentukan sudut membulatkan formulir */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan untuk efek tiga dimensi */
+}
+.add_keluhan h2 {
+    font-family: 'Times New Roman'; /* Menggunakan jenis font */
+    font-size: 30px; /* Mengatur ukuran font */
+    text-align: center; /* Memposisikan teks di tengah */
+    color: #5466da; /* Warna teks */
 }
 
-/* Style untuk grup input */
 .input-group {
-    margin-bottom: 15px;
+    margin-bottom: 15px; /* Tentukan jarak antar grup input */
 }
 
-/* Style untuk label */
 .input-group label {
-    display: block;
-    margin-bottom: 5px;
-    margin-top: 15px;
-    font-family: 'Times New Roman';
+    display: block; /* Menjadikan label sebagai elemen block */
+    margin-bottom: 5px; /* Tentukan jarak bawah label */
+    margin-top: 15px; /* Tentukan jarak atas label */
+    font-family: 'Times New Roman'; /* Tentukan jenis font label */
 }
 
-/* Style untuk input */
 .input-group input[type="text"],
 .input-group input[type="date"],
 .input-group input[type="file"] {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box; /* untuk memastikan padding dan border tidak menambah lebar input */
+    width: 100%; /* Tentukan lebar input */
+    padding: 8px; /* Tentukan padding input */
+    border: 1px solid #ccc; /* Tentukan garis batas input */
+    border-radius: 5px; /* Tentukan sudut membulatkan input */
+    box-sizing: border-box; /* Pastikan padding dan border tidak menambah lebar input */
 }
 
-/* Style untuk tombol submit */
-.login-btn {
-    width: 100%;
-    padding: 10px;
-    background-color: #3862e0;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+
+.submit-btn {
+    width: 100%; /* Tentukan lebar tombol menjadi 100% */
+    padding: 10px; /* Tentukan padding tombol */
+    background-color: #3862e0; /* Tentukan warna latar belakang tombol */
+    color: white; /* Tentukan warna teks tombol */
+    border: none; /* Hapus garis batas tombol */
+    border-radius: 5px; /* Tentukan sudut membulatkan tombol */
+    cursor: pointer; /* Ubah kursor menjadi tangan saat diarahkan ke tombol */
 }
 
-/* Hover effect untuk tombol submit */
-.login-btn:hover {
-    background-color: #1f3167;
+.submit-btn:hover {
+    background-color: #1f3167; /* Ubah warna latar belakang tombol saat dihover */
 }
 
-/* Style untuk deskripsi */
 .input-Des label {
-    display: block;
-    margin-bottom: 5px;
-    font-family: 'Times New Roman';
+    display: block; /* Menjadikan label sebagai elemen block */
+    margin-bottom: 5px; /* Tentukan jarak bawah label */
+    font-family: 'Times New Roman'; /* Tentukan jenis font label */
 }
 
 .input-Des input[type="text"] {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box; /* untuk memastikan padding dan border tidak menambah lebar input */
-    height: 100px; /* tinggi input disesuaikan dengan kebutuhan */
+    width: 100%; /* Tentukan lebar input */
+    padding: 8px; /* Tentukan padding input */
+    border: 1px solid #ccc; /* Tentukan garis batas input */
+    border-radius: 5px; /* Tentukan sudut membulatkan input */
+    box-sizing: border-box; /* Pastikan padding dan border tidak menambah lebar input */
+    height: 100px; /* Tentukan tinggi input */
 }
 
-/* Style tombol tambah keluhan */
 .add_new {
     padding: 8px 15px; /* Atur padding tombol */
     background-color: #3862e0; /* Warna latar belakang tombol */
@@ -216,10 +214,10 @@ thead th.asc span.icon-arrow{
     cursor: pointer; /* Ganti kursor saat diarahkan ke tombol */
     font-size: 14px; /* Ukuran font tombol */
     transition: background-color 0.3s, border-color 0.3s, color 0.3s; /* Transisi ketika tombol berubah */
-    font-weight: bold;
+    font-weight: bold;  /* Jika ingin mengatur tebalnya text */
     border: 2px solid #226287; /* Warna border */
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Efek shadow */
-    margin: 5px 74px 0 0;
+    margin: 5px 74px 0 0; /* Atur jarak dari tombol terhadap kanan atau kiri */
 
 }
 

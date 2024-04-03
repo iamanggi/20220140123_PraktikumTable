@@ -5,44 +5,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>PDW 5 Table</title>
+    <!-- menghubungkan ke css -->
     <link rel="stylesheet" type="text/css" href="style/style.css">
+    <!-- Include Font Awesome icons -->
     <script src="https://kit.fontawesome.com/e4dc3a114d.js" crossorigin="anonymous"></script>
+    <!-- Include SweetAlert2 library -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
-    <main class="table" id="customers_table">
+    <main class="table" id="Pengaduan-Masyarakat">   
+        <!-- Bagian header tabel -->
         <section class="table__header">
             <h1><span>Pengaduan </span>Masyarakat</h1>
             <div>
+                <!-- Tombol untuk menambahkan keluhan baru -->
                 <button class="add_new" onclick="window.open('Input.html', '_blank')">Add Keluhan</button>
             </div>            
         </section>
+        <!-- Bagian isi dari tabel -->
         <section class="table__body">
             <table>
                 <thead>
+                    <!-- Baris header tabel -->
                     <tr>
+                        <!-- Kolom nomor -->
                         <th class="no-click"> No </th>
+                        <!-- Kolom pelapor -->
                         <th class="no-click"> Pelapor </th>
+                        <!-- Kolom gambar -->
                         <th class="no-click"> Gambar </th>
+                        <!-- Kolom deskripsi -->
                         <th class="no-click"> Deskripsi </th>
+                        <!-- Kolom tanggal pengaduan -->
                         <th data-index="4"> Tanggal pengaduan <span class="icon-arrow" onclick="sortColumn(4)">&UpArrow;</span></th>
+                        <!-- Kolom lokasi laporan -->
                         <th data-index="5"> Lokasi laporan <span class="icon-arrow" onclick="sortColumn(5)">&UpArrow;</span></th>
+                        <!-- Kolom aksi -->
                         <th class="no-click"> Aksi </th>
                     </tr>
                 </thead>
                             
                 <tbody>
                     <tr>
+                        <!-- Kolom nomor -->
                         <td> 1 </td>
+                        <!-- Kolom pelapor -->
                         <td>Sulastri</td>
+                        <!-- Kolom gambar -->
                         <td><img src="assets/jalan rusak.png" alt=""> </td>
+                        <!-- Kolom deskripsi -->
                         <td> Jalanan rusak parah <br>banyak lubang besar</td>
+                        <!-- Kolom tanggal pengaduan -->
                         <td> 21 Feb 2024</td>
+                        <!-- Kolom lokasi laporan -->
                         <td> Dusun 3 </td>
+                        <!-- Kolom aksi -->
                         <td>
+                            <!-- Tombol untuk menghapus data -->
                             <button class="delete-button"><i class="fa-solid fa-trash" onclick="sweetAlert()" style="color: #ffffff;"></i></i></button>
                         </td>
-                    </tr>
+                    </tr>                    
                     <tr>
                         <td> 2 </td>
                         <td>Samsul Bahri</td>
@@ -135,6 +157,7 @@
             </table>
         </section>
     </main>
+<!-- menghubungkan ke js -->
     <script src="script/main.js"></script>
     
 </body>

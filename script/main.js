@@ -1,47 +1,45 @@
-
-// Function to sort table by column
+// Function untuk mengurutkan tabel berdasarkan kolom
 function sortColumn(columnIndex) {
-    const table = document.querySelector('table');
-    const table_rows = Array.from(document.querySelectorAll('tbody tr'));
-    const sortAsc = table.querySelector(`th[data-index="${columnIndex}"]`).classList.contains('sorted-asc');
+    const table = document.querySelector('table'); // Mengambil tabel dari dokumen
+    const table_rows = Array.from(document.querySelectorAll('tbody tr')); // Mengambil semua baris tabel
+    const sortAsc = table.querySelector(`th[data-index="${columnIndex}"]`).classList.contains('sorted-asc'); // Menentukan arah pengurutan (asc/desc)
 
-    // Toggle arrow icon
+    // Mengubah ikon panah arah pengurutan
     const arrowIcon = table.querySelector(`th[data-index="${columnIndex}"] .icon-arrow`);
     arrowIcon.textContent = sortAsc ? '↓' : '↑';
 
-    // Add or remove sorted class for visual indication
+    // Menambah atau menghapus kelas sorted untuk indikasi visual
     const headers = document.querySelectorAll('th');
-    headers.forEach(header => header.classList.remove('sorted-asc'));
-    headers.forEach(header => header.classList.remove('sorted-desc'));
-    table.querySelector(`th[data-index="${columnIndex}"]`).classList.toggle('sorted-asc', !sortAsc);
-    table.querySelector(`th[data-index="${columnIndex}"]`).classList.toggle('sorted-desc', sortAsc);
+    headers.forEach(header => header.classList.remove('sorted-asc')); // Menghapus kelas sorted-asc dari semua header
+    headers.forEach(header => header.classList.remove('sorted-desc')); // Menghapus kelas sorted-desc dari semua header
+    table.querySelector(`th[data-index="${columnIndex}"]`).classList.toggle('sorted-asc', !sortAsc); // Menambah atau menghapus kelas sorted-asc
+    table.querySelector(`th[data-index="${columnIndex}"]`).classList.toggle('sorted-desc', sortAsc); // Menambah atau menghapus kelas sorted-desc
 
-    // Sort table rows
+    // Mengurutkan baris tabel
     table_rows.sort((a, b) => {
         let first_row, second_row;
-        if (columnIndex === 4) { // Kolom 4 adalah tanggal pengaduan
-            first_row = new Date(a.querySelectorAll('td')[columnIndex].textContent);
-            second_row = new Date(b.querySelectorAll('td')[columnIndex].textContent);
-        } else { // Kolom lainnya
-            first_row = a.querySelectorAll('td')[columnIndex].textContent.toLowerCase();
-            second_row = b.querySelectorAll('td')[columnIndex].textContent.toLowerCase();
+        if (columnIndex === 4) { // Jika kolom adalah tanggal pengaduan
+            first_row = new Date(a.querySelectorAll('td')[columnIndex].textContent); // Mengambil nilai tanggal dari baris a
+            second_row = new Date(b.querySelectorAll('td')[columnIndex].textContent); // Mengambil nilai tanggal dari baris b
+        } else { // Jika kolom bukan tanggal pengaduan
+            first_row = a.querySelectorAll('td')[columnIndex].textContent.toLowerCase(); // Mengambil nilai teks dari baris a
+            second_row = b.querySelectorAll('td')[columnIndex].textContent.toLowerCase(); // Mengambil nilai teks dari baris b
         }
 
+        // Mengembalikan nilai perbandingan untuk pengurutan
         return sortAsc ? (first_row > second_row ? 1 : -1) : (first_row > second_row ? -1 : 1);
     });
 
-    // Append sorted rows to table
+    // Menambahkan baris yang sudah diurutkan kembali ke tabel
     table_rows.forEach(sorted_row => table.querySelector('tbody').appendChild(sorted_row));
 }
 
-
-
 // Menambahkan event listener pada setiap tombol "Hapus"
-const deleteButtons = document.querySelectorAll('.fa-trash');
+const deleteButtons = document.querySelectorAll('.fa-trash'); // Mengambil semua tombol "Hapus"
 
 deleteButtons.forEach(button => {
     button.addEventListener('click', () => {
-        // Tampilkan pesan konfirmasi SweetAlert
+        // Menampilkan pesan konfirmasi SweetAlert
         Swal.fire({
             title: 'Apakah Anda yakin?',
             text: 'Data keluhan ini akan dihapus permanen.',
@@ -60,7 +58,7 @@ deleteButtons.forEach(button => {
                 // Hapus elemen tr dari DOM
                 row.remove();
 
-                // Tampilkan pesan sukses
+                // Menampilkan pesan sukses
                 Swal.fire(
                     'Deleted!',
                     'Data keluhan telah dihapus.',
@@ -71,19 +69,24 @@ deleteButtons.forEach(button => {
     });
 });
 
+// Fungsi untuk menangani pengiriman formulir
 function handleFormSubmit() {
+    // Mendapatkan nilai dari input-form
     const pelapor = document.getElementById("pelapor").value;
     const deskripsi = document.getElementById("Deskripsi").value;
     const tanggal = document.getElementById("Tanggal_Pengaduan").value;
     const lokasi = document.getElementById("Lokasi").value;
 
+    // Memeriksa apakah semua field telah diisi
     if (!pelapor || !deskripsi || !tanggal || !lokasi) {
+        // Jika tidak, tampilkan pesan error
         Swal.fire({
             icon: 'error',
             title: 'Data tidak lengkap',
             text: 'Harap isi semua field!',
         });
     } else {
+        // Jika ya, tampilkan pesan sukses
         Swal.fire({
             icon: 'success',
             title: 'Data berhasil disimpan',
@@ -92,4 +95,3 @@ function handleFormSubmit() {
         });
     }
 }
-

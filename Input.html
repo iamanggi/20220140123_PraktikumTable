@@ -10,44 +10,47 @@
 </head>
 <body>
     <div class="add_keluhan">
+        <!-- Judul untuk formulir -->
         <h2>Tambah Keluhan</h2>
-        <!-- Grup input untuk username -->
+        <!-- Grup input untuk nama pelapor -->
         <div class="input-group"> 
-            <!-- Label untuk input username -->
+            <!-- Label untuk input nama pelapor -->
             <label for="Pelapor">Pelapor:</label> 
-            <!-- Input text untuk input username -->
+            <!-- Input teks untuk nama pelapor -->
             <input type="text" id="pelapor" name="pelapor" required> 
         </div>
         <!-- Grup input untuk gambar -->
         <div class="input-group"> 
             <!-- Label untuk input gambar -->
             <label for="gambar">Gambar:</label> 
-            <!-- Input file untuk input gambar -->
+            <!-- Input file untuk memilih gambar -->
             <input type="file" id="gambar" name="gambar" accept="image/*" required> 
         </div>
+        <!-- Grup input untuk deskripsi -->
         <div class="input-Des"> 
-            <!-- Label untuk input username -->
+            <!-- Label untuk input deskripsi -->
             <label for="Deskripsi">Deskripsi:</label> 
-            <!-- Input text untuk input username -->
+            <!-- Input teks untuk deskripsi -->
             <input type="text" id="Deskripsi" name="Deskripsi" required> 
         </div>
+        <!-- Grup input untuk tanggal pengaduan -->
         <div class="input-group"> 
             <!-- Label untuk input tanggal pengaduan -->
             <label for="Tanggal_Pengaduan">Tanggal Pengaduan:</label> 
-            <!-- Input tanggal untuk input tanggal pengaduan -->
+            <!-- Input tanggal untuk memilih tanggal pengaduan -->
             <input type="date" id="Tanggal_Pengaduan" name="Tanggal_Pengaduan" required> 
         </div>
+        <!-- Grup input untuk lokasi laporan -->
         <div class="input-group"> 
-            <!-- Label untuk input username -->
+            <!-- Label untuk input lokasi laporan -->
             <label for="Lokasi">Lokasi Laporan:</label> 
-            <!-- Input text untuk input username -->
+            <!-- Input teks untuk lokasi laporan -->
             <input type="text" id="Lokasi" name="Lokasi" required> 
         </div>
-        <!-- Tombol submit untuk Login -->
-        <button class="login-btn" onclick="handleFormSubmit()">Simpan</button>
-
+        <!-- Tombol untuk menyimpan keluhan -->
+        <button class="submit-btn" onclick="handleFormSubmit()">Simpan</button>
+    </div>
     </div> 
     <script src="script/main.js"></script>
-    
 </body>
 </html>
